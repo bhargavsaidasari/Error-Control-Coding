@@ -1,7 +1,7 @@
 function [predecessor_states,error_Table,optimum_path,data] = viterbidec(K,coded)
-%Function implements the hard decision viterbi decoding
-% K denotes the constraint length and coded is the demodulated binary
-% sequence
+%%%Function implements the hard decision viterbi decoding
+%%% K denotes the constraint length and coded is the demodulated binary
+%%% sequence
 %%
 %Intializing arrays essential for the state decoding process
 %The State Transition table: the next state given the current state and
@@ -19,7 +19,7 @@ predecessor_states=zeros(2^(K-1),length(coded));
 
 
 %%
-%Main section where magic happens
+
 for i=1:length(coded)
     %possible states the algorithm might end up in given it's current state
     possible_states=transition_Table(current_state+1,2:3);
